@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			width: 300px;
+			padding: 10px;
+			font-family: Arial, sans-serif;
+		}
+
+		#classInput {
+			width: 200px;
+			margin-right: 10px;
+		}
+
+		#classes {
+			max-height: 300px;
+			overflow-y: auto;
+			margin-top: 10px;
+		}
+
+		.class-item {
+			padding: 5px;
+			border-bottom: 1px solid #eee;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.hidden-class {
+			background-color: #ffeded;
+		}
+
+		.class-item {
+			padding: 5px;
+			border-bottom: 1px solid #eee;
+			display: flex;
+			justify-content: space-between;
+			cursor: pointer;
+			transition: background-color 0.2s;
+		}
+
+		.class-item:hover {
+			background-color: #f5f5f5;
+		}
+
+		.hidden-class {
+			background-color: #ffeded;
+		}
+
+		.hidden-class:hover {
+			background-color: #ffe0e0;
+		}
+
+		/* Add an info message to show the preview feature */
+		.info-message {
+			margin-top: 10px;
+			font-size: 0.8em;
+			color: #666;
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Element Hider</h3>
+	<div>
+		<input
+			type="text"
+			id="classInput"
+			placeholder="Enter class name"
+		>
+		<button id="hideBtn">Hide</button>
+	</div>
+	<h4>Classes on this page:</h4>
+	<div id="classes"></div>
+
+	<div class="info-message">
+		Hover over a class name to highlight matching elements on the page
+	</div>
+	<script src="popup.js"></script>
+</body>
+
+</html>
