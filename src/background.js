@@ -2,9 +2,12 @@ chrome.runtime.onInstalled.addListener(function () {
 	console.log("Element Hider installed");
 
 	// Initialize sync storage if needed
-	chrome.storage.sync.get(['hiddenClasses'], function (result) {
+	chrome.storage.sync.get(['hiddenClasses', 'hiddenIds'], function (result) {
 		if (!result.hiddenClasses) {
 			chrome.storage.sync.set({ hiddenClasses: [] });
+		}
+		if (!result.hiddenIds) {
+			chrome.storage.sync.set({ hiddenIds: [] });
 		}
 	});
 });

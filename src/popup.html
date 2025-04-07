@@ -59,11 +59,51 @@
 			color: #666;
 			font-style: italic;
 		}
+
+		.tabs-container {
+			display: flex;
+			margin-bottom: 10px;
+			border-bottom: 1px solid #ccc;
+		}
+
+		.tab {
+			padding: 8px 15px;
+			cursor: pointer;
+			background-color: #f0f0f0;
+			border: 1px solid #ccc;
+			border-bottom: none;
+			border-radius: 4px 4px 0 0;
+			margin-right: 5px;
+		}
+
+		.tab:hover {
+			background-color: #e0e0e0;
+		}
+
+		.tab.active {
+			background-color: #fff;
+			border-bottom: 1px solid white;
+			margin-bottom: -1px;
+			font-weight: bold;
+		}
 	</style>
 </head>
 
 <body>
 	<h3>Element Hider</h3>
+	<div
+		id="tabs"
+		class="tabs-container"
+	>
+		<div
+			class="tab active"
+			data-tab="classes"
+		>Classes</div>
+		<div
+			class="tab"
+			data-tab="ids"
+		>IDs</div>
+	</div>
 	<div>
 		<input
 			type="text"
@@ -72,12 +112,12 @@
 		>
 		<button id="hideBtn">Hide</button>
 	</div>
-	<h4>Classes on this page:</h4>
 	<div id="classes"></div>
 
 	<div class="info-message">
 		Hover over a class name to highlight matching elements on the page
 	</div>
+
 	<script src="popup.js"></script>
 </body>
 
